@@ -27,8 +27,10 @@ int main ()
 void sort (int A[], int n)
 {
     int i, j, t;
+    boolean swapped = false;
     for (i = 0; i < (n - 1); i ++)
     {
+        swapped = false;
         for (j = 0; j < (n - 1- i); j ++)
         {
             if (A[j] > A[j + 1])
@@ -36,7 +38,10 @@ void sort (int A[], int n)
                 t = A[j];
                 A[j] = A[j + 1];
                 A[j + 1] = t;
+                swapped = true;
             }
         }
+        if (!swapped)
+            break;
     }
 }
